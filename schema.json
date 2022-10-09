@@ -6,6 +6,29 @@
       "type": "string",
       "description": "e.g. 2014-06-29",
       "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+    },
+    "highlightString": {
+      "type": "string",
+      "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
+    },
+    "highlightsLowlights": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "base": {
+          "type": "string",
+          "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
+        },
+        "lowlights": {
+          "type": "array",
+          "description": "A list of any additional details regarding the highlight",
+          "additionalItems": false,
+          "items": {
+            "type": "string",
+            "description": "Fired the Finance department"
+          }
+        }
+      }
     }
   },
   "properties": {
@@ -24,6 +47,10 @@
         "label": {
           "type": "string",
           "description": "e.g. Web Developer"
+        },
+        "pronouns": {
+          "type": "string",
+          "description": "your preferred pronouns"
         },
         "image": {
           "type": "string",
@@ -137,11 +164,17 @@
           },
           "highlights": {
             "type": "array",
-            "description": "Specify multiple accomplishments",
+            "description": "Specify accomplishments and achievements",
             "additionalItems": false,
             "items": {
-              "type": "string",
-              "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/highlightString"
+                },
+                {
+                  "$ref": "#/definitions/highlightsLowlights"
+                }
+              ]
             }
           }
         }
@@ -182,8 +215,14 @@
             "description": "Specify accomplishments and achievements",
             "additionalItems": false,
             "items": {
-              "type": "string",
-              "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/highlightString"
+                },
+                {
+                  "$ref": "#/definitions/highlightsLowlights"
+                }
+              ]
             }
           }
         }
@@ -427,20 +466,17 @@
           },
           "highlights": {
             "type": "array",
-            "description": "Specify multiple features",
+            "description": "Specify accomplishments and achievements",
             "additionalItems": false,
             "items": {
-              "type": "string",
-              "description": "e.g. Directs you close but not quite there"
-            }
-          },
-          "keywords": {
-            "type": "array",
-            "description": "Specify special elements involved",
-            "additionalItems": false,
-            "items": {
-              "type": "string",
-              "description": "e.g. AngularJS"
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/highlightString"
+                },
+                {
+                  "$ref": "#/definitions/highlightsLowlights"
+                }
+              ]
             }
           },
           "startDate": {
