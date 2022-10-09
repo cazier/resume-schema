@@ -152,7 +152,6 @@
                 },
                 "lowlights": {
                   "type": "array",
-                  "description": "A list of any additional details regarding the highlight",
                   "additionalItems": false,
                   "items": {
                     "type": "string",
@@ -208,7 +207,6 @@
                 },
                 "lowlights": {
                   "type": "array",
-                  "description": "A list of any additional details regarding the highlight",
                   "additionalItems": false,
                   "items": {
                     "type": "string",
@@ -470,7 +468,6 @@
                 },
                 "lowlights": {
                   "type": "array",
-                  "description": "A list of any additional details regarding the highlight",
                   "additionalItems": false,
                   "items": {
                     "type": "string",
