@@ -9,7 +9,7 @@
     },
     "highlights": {
       "type": "object",
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "base": {
           "type": "string",
@@ -160,7 +160,7 @@
           },
           "highlights": {
             "type": "object",
-            "additionalProperties": true,
+            "additionalProperties": false,
             "properties": {
               "base": {
                 "type": "string",
@@ -212,7 +212,7 @@
           },
           "highlights": {
             "type": "object",
-            "additionalProperties": true,
+            "additionalProperties": false,
             "properties": {
               "base": {
                 "type": "string",
@@ -470,7 +470,7 @@
           },
           "highlights": {
             "type": "object",
-            "additionalProperties": true,
+            "additionalProperties": false,
             "properties": {
               "base": {
                 "type": "string",
