@@ -7,11 +7,7 @@
       "description": "e.g. 2014-06-29",
       "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
     },
-    "highlightString": {
-      "type": "string",
-      "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
-    },
-    "highlightsLowlights": {
+    "highlights": {
       "type": "object",
       "additionalProperties": true,
       "properties": {
@@ -163,18 +159,22 @@
             "description": "Give an overview of your responsibilities at the company"
           },
           "highlights": {
-            "type": "array",
-            "description": "Specify accomplishments and achievements",
-            "additionalItems": false,
-            "items": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/highlightString"
-                },
-                {
-                  "$ref": "#/definitions/highlightsLowlights"
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "base": {
+                "type": "string",
+                "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
+              },
+              "lowlights": {
+                "type": "array",
+                "description": "A list of any additional details regarding the highlight",
+                "additionalItems": false,
+                "items": {
+                  "type": "string",
+                  "description": "Fired the Finance department"
                 }
-              ]
+              }
             }
           }
         }
@@ -211,20 +211,24 @@
             "description": "Give an overview of your responsibilities at the company"
           },
           "highlights": {
-            "type": "array",
-            "description": "Specify accomplishments and achievements",
-            "additionalItems": false,
-            "items": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/highlightString"
-                },
-                {
-                  "$ref": "#/definitions/highlightsLowlights"
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "base": {
+                "type": "string",
+                "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
+              },
+              "lowlights": {
+                "type": "array",
+                "description": "A list of any additional details regarding the highlight",
+                "additionalItems": false,
+                "items": {
+                  "type": "string",
+                  "description": "Fired the Finance department"
                 }
-              ]
+              }
             }
-          }
+          }      
         }
       }
     },
@@ -465,20 +469,24 @@
             "description": "Short summary of project. e.g. Collated works of 2017."
           },
           "highlights": {
-            "type": "array",
-            "description": "Specify accomplishments and achievements",
-            "additionalItems": false,
-            "items": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/highlightString"
-                },
-                {
-                  "$ref": "#/definitions/highlightsLowlights"
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "base": {
+                "type": "string",
+                "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising"
+              },
+              "lowlights": {
+                "type": "array",
+                "description": "A list of any additional details regarding the highlight",
+                "additionalItems": false,
+                "items": {
+                  "type": "string",
+                  "description": "Fired the Finance department"
                 }
-              ]
+              }
             }
-          },
+          },      
           "startDate": {
             "$ref": "#/definitions/iso8601"
           },
